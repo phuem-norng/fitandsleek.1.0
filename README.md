@@ -139,12 +139,8 @@ Common endpoints used by the frontend:
 
 ## Contributing
 
-Internal project. If you need access or want to contribute, please contact the maintainer.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ## License
 
 All rights reserved.
-# Fitandsleek
-# Fitandsleek
-# fitandsleek-System
-# fitandsleek.1.0
