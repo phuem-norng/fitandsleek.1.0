@@ -8,13 +8,11 @@ function parseOrigin(input) {
 
 function normalizeConfiguredOrigin() {
     const configured =
-        import.meta.env.VITE_BACKEND_ORIGIN ||
-        import.meta.env.VITE_API_BASE_URL ||
-        "http://127.0.0.1:8000";
+           import.meta.env.VITE_BACKEND_ORIGIN || import.meta.env.VITE_API_BASE_URL;
 
     const parsed = parseOrigin(configured);
     if (!parsed) {
-        return "http://127.0.0.1:8000";
+           return null; // or handle the error as needed
     }
 
     return `${parsed.protocol}//${parsed.host}`;

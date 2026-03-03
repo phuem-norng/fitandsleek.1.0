@@ -6,12 +6,8 @@ import { resolveBackendOrigin } from "../../lib/backendOrigin";
 function alternateLoopbackOrigin(origin) {
   try {
     const parsed = new URL(origin);
-    if (parsed.hostname === "localhost") {
-      return `${parsed.protocol}//127.0.0.1${parsed.port ? `:${parsed.port}` : ""}`;
-    }
-    if (parsed.hostname === "127.0.0.1") {
-      return `${parsed.protocol}//localhost${parsed.port ? `:${parsed.port}` : ""}`;
-    }
+    // In production, always use the deployed backend domain from env
+    return import.meta.env.VITE_BACKEND_ORIGIN;
     return null;
   } catch {
     return null;

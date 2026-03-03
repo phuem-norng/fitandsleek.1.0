@@ -35,8 +35,7 @@ export default function AdminShipments() {
 
   const driverTokenStorageKey = "fs_driver_token";
   const driverTokenTtlMs = 24 * 60 * 60 * 1000;
-
-  const rawDriverBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+  const rawDriverBaseUrl = import.meta.env.VITE_API_BASE_URL;
   const driverBaseUrl = rawDriverBaseUrl.replace(/\/$/, "").endsWith("/api")
     ? rawDriverBaseUrl.replace(/\/$/, "")
     : `${rawDriverBaseUrl.replace(/\/$/, "")}/api`;
