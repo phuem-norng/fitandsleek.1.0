@@ -33,4 +33,5 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 
 EXPOSE 10000
 
-CMD ["apache2-foreground"]
+# កែសម្រួលត្រង់នេះ៖ ប្រើ Shell ដើម្បីរត់ Migration មុននឹងបើក Server
+CMD ["sh", "-c", "php artisan migrate --force && apache2-foreground"]
